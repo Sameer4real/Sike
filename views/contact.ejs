@@ -1,0 +1,108 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sike | <%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <div class="row container" style="margin-top: 50px">
+      <form id="form" class="col s12" autocomplete="off" action="/contact">
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              style="margin-top: 25px; background: transparent"
+              id="first_name"
+              type="text"
+              class="validate"
+              required
+              onfocus="this.value=''"
+            />
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input
+              style="margin-top: 25px"
+              id="last_name"
+              type="text"
+              class="validate"
+              required
+              onfocus="this.value=''"
+            />
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              style="margin-top: 25px"
+              id="email"
+              type="email"
+              class="validate"
+              required
+              onfocus="this.value=''"
+            />
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea
+              style="margin-top: 25px"
+              id="textarea1"
+              class="materialize-textarea"
+              required
+              onfocus="this.value=''"
+            ></textarea>
+            <label for="textarea1">Feedback</label>
+          </div>
+        </div>
+        <div
+          id="div"
+          class="row center"
+          style="visibility: hidden; display: none"
+        >
+          <div class="input-field col s12">
+            <span id="span" class="thanks"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="btn purple col s12"
+            style="padding: 0; margin: 0; margin-top: 20px"
+          >
+            <button class="btn purple" type="submit" style="width: 100%">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const div = document.getElementById("div");
+      const form = document.getElementById("form");
+      const firstName = document.getElementById("first_name");
+      const lastName = document.getElementById("last_name");
+      const span = document.getElementById("span");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fullname = firstName.value + " " + lastName.value;
+        form.reset();
+
+        div.style.cssText = "display:unset; visibility:visibile;";
+        span.innerHTML = "Thank you " + fullname + ", We will be in touch :)";
+      });
+    </script>
+
+    <%-include('./partials/footer.ejs')%>
+  </body>
+</html>

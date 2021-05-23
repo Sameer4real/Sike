@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  font-size: 1.2rem;
+  margin: 0;
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+#navbar {
+  background: black;
+}
+#brandlogo {
+  padding-left: 20px;
+}
+#navul li:hover {
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+}
+#navul a:hover {
+  color: black;
+}
+.sticky {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.bigPoster {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.bigPosterContent {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+.bigposterImg {
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+  max-height: 100%;
+}
+.content {
+  width: 400px;
+  max-width: 100%;
+  text-align: left;
+}
+.content p {
+  color: #d7e1ec;
+  font-size: 19px;
+}
+.username {
+  position: absolute;
+  top: 2px;
+  right: 16px;
+  opacity: 0.5;
+  transition: 0.5s opacity;
+  color: #fff;
+  cursor: pointer;
+}
+.username input[type="text"] {
+  color: white;
+}
+.username:hover {
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  position: unset;
+  background-color: unset;
+  box-shadow: unset;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.box {
+  margin: 20px 20px;
+  height: 400px;
+  width: 400px;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 20px;
+}
+.one {
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+.one:hover {
+  border: 2px solid black;
+}
+.bigPosterContent {
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+.bigPosterContent a {
+  transition: 0.5s;
+}
+.bigPosterContent a:hover {
+  color: purple;
+  transition: 0.5s;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.95);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.one {
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  height: 500px;
+}
+.one h3 {
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.one a {
+  color: white;
+  transition: 0.5s color;
+}
+.one a:hover {
+  color: purple;
+  transition: 0.5s color;
+}
+.one p {
+  font-family: "Montserrat";
+  color: #d7e1ec;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  max-width: 100%;
+  text-align: left;
+}
+.releaseDate {
+  opacity: 0.7;
+}
+.imgMovie {
+  margin: 0 auto;
+  width: 400px;
+  height: 230px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.details {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.details .movieDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 10px;
+}
+.movieDiv .movie {
+  width: 450px;
+  height: 300px;
+  border: unset;
+}
+
+.details .movieDetails {
+  height: 400px;
+  margin: 20px;
+  padding: 20px;
+  color: #fff;
+  opacity: 0.95;
+  background-color: rgb(25, 12, 51);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.details .movieDetails p {
+  color: #d7e1ec;
+}
+.movieDetails h2 {
+  margin: 0;
+  margin-top: 15px;
+}
+
+.delete {
+  margin: 5px;
+  float: right;
+  background-color: purple;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.delete:hover {
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+
+@media screen and (max-width: 500px) {
+  .bigPosterContent {
+    width: 100%;
+    max-width: 300px;
+  }
+  .card {
+    display: block;
+    margin: 0;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .imgMovie {
+    width: 100%;
+    max-width: 300px;
+  }
+  .divcontent {
+    margin: 0;
+    width: 100%;
+    max-width: 200px;
+  }
+  .one {
+    display: unset;
+  }
+  .movieDetails {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  element.style {
+    height: 350px;
+  }
+  .movieDiv {
+    height: auto;
+  }
+  .movie {
+    margin: 0;
+    width: 100%;
+
+    max-width: 350px;
+  }
+  .footer {
+    margin-top: 50px;
+  }
+
+  .box {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;
+  }
+}
+@media screen and (min-width: 650px) {
+  .movieDiv .movie {
+    width: 650px;
+    height: 350px;
+  }
+  .details {
+    height: unset;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .details {
+    display: flex;
+    float: right;
+    justify-content: space-around;
+    background-color: black;
+    padding: 20px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 97%;
+    height: 600px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .details .movieDetails {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: fit-content;
+    width: 500px;
+    padding: 20px;
+    color: #fff;
+    opacity: 0.95;
+    background-color: rgb(25, 12, 51);
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  .movieDetails h2 {
+    font-size: 3rem;
+  }
+  .movieDetails p {
+    color: #d7e1ec;
+  }
+
+  .movieDiv .movie {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 700px;
+    height: 500px;
+    border: unset;
+    outline: none;
+  }
+
+  .container .signupForm {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+  .invisible {
+    display: none;
+  }
+
+  .container .loginForm {
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+}
+.thanks {
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.about {
+  text-align: left;
+  margin: 60px;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  margin: 80px auto 20px;
+}

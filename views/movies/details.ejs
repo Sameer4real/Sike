@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <title>Sike | <%= movie.name %></title>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="details">
+      <div class="movieDiv">
+        <div class="movie">
+          <iframe allowfullscreen class="movie" src="<%= movie.url %>"></iframe>
+        </div>
+      </div>
+      <div class="movieDetails" style="display: block">
+        <h2 style="text-transform: capitalize; text-align: left">
+          <%= movie.name %>
+        </h2>
+        <p><%= movie.description %></p>
+        <p><%= movie.date %></p>
+        <p>Estimated time :<%= movie.time %></p>
+      </div>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

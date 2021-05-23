@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sike | <%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/navbarAdmin.ejs') %>
+
+    <form
+      style="margin-top: 40px"
+      class="container"
+      autocomplete="off"
+      action="/admin"
+      method="POST"
+    >
+      <label>Movie name</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="name"
+        required
+        onfocus="this.value=''"
+      />
+      <label>Movie description</label>
+      <textarea
+        style="margin-bottom: 20px; margin-top: 20px; height: 100px"
+        name="description"
+        required
+        onfocus="this.value=''"
+      ></textarea>
+      <label>Release Date</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="date"
+        required
+        onfocus="this.value=''"
+      />
+      <label>Estimated time</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="time"
+        required
+        onfocus="this.value=''"
+      />
+      <label>The Movie</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="url"
+        required
+        onfocus="this.value=''"
+      />
+      <label>The Movie poster</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="urlPoster"
+        required
+        onfocus="this.value=''"
+      />
+
+      <button style="margin-top: 20px" class="btn purple">Save</button>
+    </form>
+
+    <%- include('./partials/footer.ejs')%>
+  </body>
+</html>

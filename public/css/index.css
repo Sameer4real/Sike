@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 1.2rem;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: fixed;
+  padding: 20px;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  opacity: 0.5;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+.button {
+  display: block;
+  height: 40px;
+  width: 100%;
+  opacity: 0.5;
+  transition: 0.5s opacity;
+  background-color: #8e44ad;
+  border: 2px solid #8e44ad;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.button:hover {
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form-control small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+@media screen and (min-width: 800px) {
+  .video-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .video-container video {
+    /* Make video to at least 100% wide and tall */
+    min-width: 100%;
+    min-height: 100%;
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+    /* Center the video */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .container {
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+    position: fixed;
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+  }
+  .button {
+    display: block;
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+footer {
+  color: #fff;
+  text-align: center;
+  margin: 80px auto 20px;
+}

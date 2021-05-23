@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      ,
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" , content="no-cache" />
+    <meta http-equiv="Expires" , content="-1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <title>Sike | <%= title %></title>
+  </head>
+  <body>
+    <div class="video-container video">
+      <video autoplay muted> 
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/sike-c9332.appspot.com/o/forever.mp4?alt=media&token=14f0f1fd-847e-47f6-a872-b222767066cc"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+
+    <div id="loginDiv" class="container">
+      <form
+        action="/index"
+        method="post"
+        id="form2"
+        class="signupForm"
+        autocomplete="off"
+        style="height: auto"
+      >
+        <h2 style="color: #8e44ad; opacity: 0.5">Register</h2>
+        <div class="form-control">
+          <label>Username</label>
+          <input type="text" name="username" required />
+        </div>
+
+        <div class="form-control">
+          <label>Email</label>
+          <input id="emailRegister" type="email" name="email" required />
+        </div>
+
+        <div class="form-control">
+          <label>Password</label>
+          <input id="password2" type="password" name="password" required />
+        </div>
+        <div class="form-control">
+          <label>Password Check</label>
+          <input
+            id="passwordCheck"
+            type="password"
+            name="passwordCheck"
+            required
+          />
+          <small>Error message</small>
+        </div>
+
+        <button class="button" type="submit">Register</button>
+
+        <% if (success) { %>
+        <div
+          class="form-control"
+          style="margin-top: 10px; color: white"
+          id="success_message"
+        >
+          Email already exists...
+        </div>
+        <% } %> <% if (fax) { %>
+        <div
+          class="form-control"
+          style="margin-top: 10px; color: white"
+          id="success_message"
+        >
+          You can login now :)
+        </div>
+        <% } %>
+        <p style="color: purple; opacity: 0.5">
+          You already have an account? <a id="a" href="/login">Login</a>
+        </p>
+      </form>
+    </div>
+
+    <script>
+      const form2 = document.getElementById("form2");
+
+      const password2 = document.getElementById("password2");
+      const passCheck = document.getElementById("passwordCheck");
+      const status = document.getElementById("status");
+      const emailRegister = document.getElementById("emailRegister");
+
+      form2.addEventListener("submit", (e) => {
+        if (status.value != "") {
+          alert(status.text());
+        }
+        checkPass();
+      });
+      function checkPass() {
+        if (password2.value === passCheck.value) {
+          return setSuccessFor(passCheck);
+        } else {
+          return setErrorFor(passCheck, "Incorrect Password");
+        }
+      }
+    </script>
+  </body>
+</html>

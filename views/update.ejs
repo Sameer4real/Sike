@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sike | <%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+    <%- include('./partials/navbarAdmin.ejs') %>
+
+    <form
+      style="margin-top: 40px"
+      class="container"
+      autocomplete="off"
+      method="POST"
+    >
+      <label>Movie name</label>
+
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="name"
+        value="<%= movieData.name %>"
+        required
+      />
+      <label>Movie description</label>
+
+      <textarea
+        style="margin-bottom: 20px; margin-top: 20px; height: 100px"
+        name="description"
+        required
+      >
+<%= movieData.description %></textarea
+      >
+      <label>Release Date</label>
+
+      <input
+        value="<%= movieData.date %>"
+        style="margin-bottom: 20px"
+        type="text"
+        name="date"
+        required
+      />
+      <label>Estimated time</label>
+
+      <input value="<%= movieData.time %>" type="text" name="time" required />
+      <label>The Movie</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="url"
+        required
+        value="<%= movieData.url %> "
+      />
+      <label>The Movie poster</label>
+      <input
+        style="margin-bottom: 20px"
+        type="text"
+        name="urlPoster"
+        required
+        value="<%= movieData.urlPoster %> "
+      />
+
+      <button
+        style="margin-top: 20px"
+        href="/update/<%= movieData._id %> "
+        class="btn purple"
+      >
+        Save
+      </button>
+    </form>
+
+    <%- include('./partials/footer.ejs')%>
+  </body>
+</html>

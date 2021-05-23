@@ -1,0 +1,98 @@
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <div class="bigPoster">
+      <video
+        loop
+        muted
+        autoplay
+        style="height: 88%; object-fit: fill"
+        class="bigposterImg video"
+      >
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/sike-c9332.appspot.com/o/theDarkKnight.mp4?alt=media&token=58a98d2a-604e-48b5-b619-d903f9bb2f34"
+          type="video/mp4"
+        />
+      </video>
+
+      <form method="POST" id="form" class="username" autocomplete="off">
+        <input
+          required
+          id="inputSearch"
+          name="search"
+          type="text"
+          placeholder="Search.."
+          onfocus="this.value=''"
+        />
+      </form>
+      <div class="bigPosterContent">
+        <% if (movies.length > 0) { %> <% movies.forEach(movie =>{ %>
+        <%if(movie.name === 'the dark knight') {%>
+        <h3 style="text-align: left">
+          <a style="text-transform: capitalize" href="/user/<%=movie._id %> ">
+            <%= movie.name %>
+          </a>
+        </h3>
+
+        <div class="content">
+          <p><%= movie.description %></p>
+        </div>
+        <% } %> <% }) %> <% } %>
+      </div>
+    </div>
+
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="card">
+      <div class="flex-container">
+        <% if (movies.length > 0) { %> <% movies.forEach(movie =>{ %>
+        <div class="box one">
+          <img
+            class="imgMovie"
+            src="<%= movie.urlPoster %> "
+            alt="MoviePoster"
+          />
+
+          <div class="divcontent" style="margin: 20px">
+            <h3 style="text-align: left; font-size: 1.5rem">
+              <a
+                style="text-transform: capitalize"
+                href="/user/<%=movie._id %> "
+              >
+                <%= movie.name %>
+              </a>
+            </h3>
+            <p><%=movie.description %></p>
+            <p class="releaseDate">Released in: <%= movie.date %></p>
+          </div>
+        </div>
+        <%})%> <% } else { %>
+        <div class="about">
+          <h5>There are no movies to display...</h5>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    //
+    <script>
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>
